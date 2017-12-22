@@ -355,13 +355,17 @@ header{
 body.index{
     #form-function{
         text-align:center;
+        position: relative;
+        overflow: hidden;
         img{
             display: block;
             margin: 0 auto;
             max-width: 1082px;
             width: 90%;
+            z-index: 2;
+            position: relative;
             .responsiveMax(@mobile, {
-                margin-top: -@headerHeightMobile;
+                margin-top: -@headerHeightMobile*2;
             });
         }
         .responsiveMax(@mobile, {
@@ -448,6 +452,26 @@ body.index{
                 border-radius: 50%;
             }
         }
+        .white-box{
+            background-color: @white;
+            min-width: 500px;
+            min-height: 500px;
+            position: absolute;
+            top: -400px;
+            z-index: 0;
+            transform: rotate(45deg);
+            left: -250px;
+        }
+        .blue-box{
+            background-color: @blue;
+            min-width: 800px;
+            min-height: 800px;
+            position: absolute;
+            bottom: -500px;
+            z-index: 0;
+            transform: rotate(45deg);
+            right: -425px;
+        }
     }
     ul{
         list-style: none;
@@ -458,7 +482,8 @@ body.index{
         margin: 230px 0px;
         padding-top: @gutter;
         &:first-child{
-            margin-top: 150px-@headerHeight;
+//            margin-top: 150px-@headerHeight;
+            background-color: @blue;
         }
         .responsiveMax(@mobile, {
             padding: @gutter;

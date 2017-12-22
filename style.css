@@ -785,16 +785,20 @@ header nav ul:after {
 }
 body.index #form-function {
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 body.index #form-function img {
   display: block;
   margin: 0 auto;
   max-width: 1082px;
   width: 90%;
+  z-index: 2;
+  position: relative;
 }
 @media (max-width: 768px) {
   body.index #form-function img {
-    margin-top: -94px;
+    margin-top: -188px;
   }
 }
 @media (max-width: 768px) {
@@ -908,6 +912,26 @@ body.index #form-function .see-work .circle {
   z-index: 4;
   border-radius: 50%;
 }
+body.index #form-function .white-box {
+  background-color: #fafafa;
+  min-width: 500px;
+  min-height: 500px;
+  position: absolute;
+  top: -400px;
+  z-index: 0;
+  transform: rotate(45deg);
+  left: -250px;
+}
+body.index #form-function .blue-box {
+  background-color: #292f83;
+  min-width: 800px;
+  min-height: 800px;
+  position: absolute;
+  bottom: -500px;
+  z-index: 0;
+  transform: rotate(45deg);
+  right: -425px;
+}
 body.index ul {
   list-style: none;
   padding: 0px;
@@ -918,7 +942,7 @@ body.index section {
   padding-top: 22px;
 }
 body.index section:first-child {
-  margin-top: 52px;
+  background-color: #292f83;
 }
 @media (max-width: 768px) {
   body.index section {
