@@ -12,6 +12,9 @@ body, html{
 //    .responsiveMax(@mobile, {
 //        background-color: @red;
 //    });
+    img{
+        max-width: 100%;
+    }
 }
 body{
     font-size: 21pt; 
@@ -343,7 +346,7 @@ body.index{
     }
     section{
         margin: 230px 0px;
-        padding-top: @headerHeight;
+        padding-top: @gutter;
         &:first-child{
             margin-top: 150px-@headerHeight;
         }
@@ -544,6 +547,12 @@ body.index{
 body.project-template{
     .hero{
         background-color: fade(@blue, 20%);
+        .one-half{
+            padding: @gutter;
+            .responsiveMax(@mobile, {
+                width: 100%;
+            });
+        }
     }
     .solution{
         .circle-container{
@@ -558,6 +567,10 @@ body.project-template{
                 display: table-cell;
                 vertical-align: middle;
                 text-align: center;
+                .responsiveMax(@mobile, {
+                    
+                    display: block;
+                });
             }
         }
     }
@@ -604,7 +617,16 @@ body.project-template{
 }
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////// IFRAME ZOOM
+/////////////////////////////////////////////////////////////////////////////////////////////
 
+body.iframe-template{
+    img{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
 
 
 
@@ -755,7 +777,7 @@ body.project-template{
 
 	.featherlight-iframe .featherlight-content{
 		/* dimensions: 1140px prevents iframe from spanning the full width of the browser */
-		width: 100%;
+		width: 90%;
 		max-width: 1140px;
 
 		/* spacing */
