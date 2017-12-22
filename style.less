@@ -319,6 +319,23 @@ header{
 
 ////////////////////////////////////////////////////////////////////////////////////// STRUCTURE
 body.index{
+    #form-function{
+        text-align:center;
+        img{
+            display: block;
+            margin: 0 auto;
+            max-width: 1082px;
+            width: 90%;
+            .responsiveMax(@mobile, {
+                margin-top: -@headerHeightMobile;
+            });
+        }
+        .responsiveMax(@mobile, {
+            display: table-cell;
+            vertical-align:middle;
+            height: 100vh;
+        });
+    }
     ul{
         list-style: none;
         padding: 0px;
@@ -527,6 +544,22 @@ body.index{
 body.project-template{
     .hero{
         background-color: fade(@blue, 20%);
+    }
+    .solution{
+        .circle-container{
+            display: table;
+            margin: 0 auto;
+            .circle{
+                border-radius: 50%;
+                background-color: @red;
+                color: @white;
+                height: 300px;
+                width: 300px;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
     }
     .main-content{
         section{

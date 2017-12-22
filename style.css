@@ -745,6 +745,27 @@ header nav ul:after {
   width: 100%;
   transition: 2s all;
 }
+body.index #form-function {
+  text-align: center;
+}
+body.index #form-function img {
+  display: block;
+  margin: 0 auto;
+  max-width: 1082px;
+  width: 90%;
+}
+@media (max-width: 768px) {
+  body.index #form-function img {
+    margin-top: -94px;
+  }
+}
+@media (max-width: 768px) {
+  body.index #form-function {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100vh;
+  }
+}
 body.index ul {
   list-style: none;
   padding: 0px;
@@ -950,6 +971,20 @@ body.index section ul:after {
 }
 body.project-template .hero {
   background-color: rgba(41, 47, 131, 0.2);
+}
+body.project-template .solution .circle-container {
+  display: table;
+  margin: 0 auto;
+}
+body.project-template .solution .circle-container .circle {
+  border-radius: 50%;
+  background-color: #f85452;
+  color: #fafafa;
+  height: 300px;
+  width: 300px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 body.project-template .main-content section {
   margin-bottom: 10em;
