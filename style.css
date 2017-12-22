@@ -870,9 +870,6 @@ body.index section ul:after {
   top: 0;
   right: 10px;
 }
-.index #illustrations .header h2 {
-  font-size: 2.5em !important;
-}
 #about {
   max-width: 874.375px;
   width: 100%;
@@ -885,11 +882,6 @@ body.index section ul:after {
 }
 #about h2:after {
   display: none;
-}
-@media (max-width: 768px) {
-  #about h2 {
-    color: #fafafa;
-  }
 }
 #contact {
   max-width: 546.484375px;
@@ -1060,7 +1052,6 @@ body.project-template .main-content p {
     margin-left: 5%;
     margin-right: 5%;
     max-height: 95%;
-    height: 90%;
     /* styling */
     background: #fff;
     cursor: auto;
@@ -1133,6 +1124,9 @@ body.project-template .main-content p {
     display: block;
     position: relative;
   }
+}
+.featherlight-iframe .featherlight-content {
+  height: 90%;
 }
 /* handling phones and small screens */
 @media only screen and (max-width: 1024px) {
