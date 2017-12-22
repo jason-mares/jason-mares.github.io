@@ -763,24 +763,24 @@ header nav ul:after {
 }
 @keyframes fadeArrow {
   0% {
-    color: #fafafa;
+    border-color: #fafafa;
   }
   50% {
-    color: #f85452;
+    border-color: #f85452;
   }
   100% {
-    color: #fafafa;
+    border-color: #fafafa;
   }
 }
 @-webkit-keyframes fadeArrow {
   0% {
-    color: #fafafa;
+    border-color: #fafafa;
   }
   50% {
-    color: #f85452;
+    border-color: #f85452;
   }
   100% {
-    color: #fafafa;
+    border-color: #fafafa;
   }
 }
 body.index #form-function {
@@ -809,6 +809,10 @@ body.index #form-function .see-work {
   font-family: 'IBM Plex Bold';
   padding-top: 2em;
   position: relative;
+  width: 100%;
+}
+body.index #form-function .see-work .seeworkcontainer {
+  width: 100%;
 }
 body.index #form-function .see-work a {
   position: absolute;
@@ -816,6 +820,9 @@ body.index #form-function .see-work a {
   padding-top: 22px;
   padding-left: 51px;
   left: -22px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
 }
 body.index #form-function .see-work #see {
   color: #fafafa;
@@ -826,9 +833,34 @@ body.index #form-function .see-work #see {
 body.index #form-function .see-work #work {
   color: #f85452;
   border-bottom: 4px solid #f85452;
+  z-index: 3;
+  position: relative;
+  background-color: #f2f2f2;
+}
+body.index #form-function .see-work .pointers {
+  width: 90%;
+  position: absolute;
+  top: 20px;
+  right: 0px;
+  text-align: right;
+  box-sizing: border-box;
+  z-index: 2;
+}
+@media (min-width: 426px) {
+  body.index #form-function .see-work .pointers {
+    position: relative;
+    right: auto;
+    top: -3px;
+  }
 }
 body.index #form-function .see-work .pointer {
-  color: #f85452;
+  border: solid #f85452;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  text-align: right;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   animation-name: fadeArrow;
   -webkit-animation-name: fadeArrow;
   animation-duration: 3s;
@@ -870,10 +902,10 @@ body.index #form-function .see-work .circle {
   position: absolute;
   top: 0px;
   left: 0px;
-  background-color: #F85452;
+  background-color: #f85452;
   height: 100px;
   width: 100px;
-  /* z-index: 0; */
+  z-index: 4;
   border-radius: 50%;
 }
 body.index ul {
