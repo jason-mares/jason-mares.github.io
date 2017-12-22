@@ -2,6 +2,7 @@
 /**
  * Scaffolding
  */
+@import "assets/css/featherlight.min.css";
 .boxed {
   width: 55%;
   margin: 0 auto;
@@ -1072,7 +1073,7 @@ body.iframe-template img {
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 2;
+    z-index: 9999999999;
     /* position: centering content */
     text-align: center;
     /* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
