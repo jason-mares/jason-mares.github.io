@@ -753,6 +753,36 @@ header nav ul:after {
   width: 100%;
   transition: 2s all;
 }
+.fadeArrow {
+  animation-name: fadeArrow;
+  -webkit-animation-name: fadeArrow;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes fadeArrow {
+  0% {
+    color: #fafafa;
+  }
+  50% {
+    color: #f85452;
+  }
+  100% {
+    color: #fafafa;
+  }
+}
+@-webkit-keyframes fadeArrow {
+  0% {
+    color: #fafafa;
+  }
+  50% {
+    color: #f85452;
+  }
+  100% {
+    color: #fafafa;
+  }
+}
 body.index #form-function {
   text-align: center;
 }
@@ -773,6 +803,78 @@ body.index #form-function img {
     vertical-align: middle;
     height: 100vh;
   }
+}
+body.index #form-function .see-work {
+  font-size: 1.5em;
+  font-family: 'IBM Plex Bold';
+  padding-top: 2em;
+  position: relative;
+}
+body.index #form-function .see-work a {
+  position: absolute;
+  text-decoration: none;
+  padding-top: 22px;
+  padding-left: 51px;
+  left: -22px;
+}
+body.index #form-function .see-work #see {
+  color: #fafafa;
+  border-bottom: 4px solid #fafafa;
+  z-index: 25;
+  position: relative;
+}
+body.index #form-function .see-work #work {
+  color: #f85452;
+  border-bottom: 4px solid #f85452;
+}
+body.index #form-function .see-work .pointer {
+  color: #f85452;
+  animation-name: fadeArrow;
+  -webkit-animation-name: fadeArrow;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+body.index #form-function .see-work .pointer.one {
+  animation-delay: 0.25s !important;
+}
+body.index #form-function .see-work .pointer.two {
+  animation-delay: 0.5s !important;
+}
+body.index #form-function .see-work .pointer.three {
+  animation-delay: 0.75s !important;
+}
+body.index #form-function .see-work .pointer.four {
+  animation-delay: 1s !important;
+}
+body.index #form-function .see-work .pointer.five {
+  animation-delay: 1.25s !important;
+}
+body.index #form-function .see-work .pointer.six {
+  animation-delay: 1.5s !important;
+}
+body.index #form-function .see-work .pointer.seven {
+  animation-delay: 1.75s !important;
+}
+body.index #form-function .see-work .pointer.eight {
+  animation-delay: 2s !important;
+}
+body.index #form-function .see-work .pointer.nine {
+  animation-delay: 2.25s !important;
+}
+body.index #form-function .see-work .pointer.ten {
+  animation-delay: 2.5s !important;
+}
+body.index #form-function .see-work .circle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #F85452;
+  height: 100px;
+  width: 100px;
+  /* z-index: 0; */
+  border-radius: 50%;
 }
 body.index ul {
   list-style: none;
