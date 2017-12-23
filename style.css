@@ -753,36 +753,6 @@ header nav ul:after {
   width: 100%;
   transition: 2s all;
 }
-.fadeArrow {
-  animation-name: fadeArrow;
-  -webkit-animation-name: fadeArrow;
-  animation-duration: 3s;
-  -webkit-animation-duration: 3s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
-}
-@keyframes fadeArrow {
-  0% {
-    border-color: #fafafa;
-  }
-  50% {
-    border-color: #f85452;
-  }
-  100% {
-    border-color: #fafafa;
-  }
-}
-@-webkit-keyframes fadeArrow {
-  0% {
-    border-color: #fafafa;
-  }
-  50% {
-    border-color: #f85452;
-  }
-  100% {
-    border-color: #fafafa;
-  }
-}
 body.index #form-function {
   text-align: center;
   position: relative;
@@ -795,6 +765,13 @@ body.index #form-function img {
   width: 90%;
   z-index: 2;
   position: relative;
+  animation-name: riseFadeUp;
+  -webkit-animation-name: riseFadeUp;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-timing-function: ease-out;
 }
 @media (max-width: 768px) {
   body.index #form-function img {
@@ -814,6 +791,13 @@ body.index #form-function .see-work {
   padding-top: 2em;
   position: relative;
   width: 100%;
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  visibility: visible !important;
 }
 body.index #form-function .see-work .seeworkcontainer {
   width: 100%;
@@ -911,6 +895,12 @@ body.index #form-function .see-work .circle {
   width: 100px;
   z-index: 4;
   border-radius: 50%;
+  animation-name: miniPulse;
+  -webkit-animation-name: miniPulse;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 body.index #form-function .white-box {
   background-color: #fafafa;
@@ -921,6 +911,17 @@ body.index #form-function .white-box {
   z-index: 0;
   transform: rotate(45deg);
   left: -250px;
+  animation-duration: 0.15s;
+  -webkit-animation-duration: 0.15s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-timing-function: ease-out;
 }
 body.index #form-function .blue-box {
   background-color: #292f83;
@@ -931,6 +932,17 @@ body.index #form-function .blue-box {
   z-index: 0;
   transform: rotate(45deg);
   right: -425px;
+  animation-duration: 0.15s;
+  -webkit-animation-duration: 0.15s;
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-timing-function: ease-out;
 }
 body.index ul {
   list-style: none;
@@ -941,8 +953,11 @@ body.index section {
   margin: 230px 0px;
   padding-top: 22px;
 }
-body.index section:first-child {
-  background-color: #292f83;
+@media (max-width: 768px) {
+  body.index section:first-child {
+    background-color: #292f83;
+    margin-top: -2px;
+  }
 }
 @media (max-width: 768px) {
   body.index section {
@@ -1359,5 +1374,162 @@ body.iframe-template img {
   }
   .featherlight-iframe .featherlight-content {
     margin: 0;
+  }
+}
+.fadeArrow {
+  animation-name: fadeArrow;
+  -webkit-animation-name: fadeArrow;
+  animation-duration: 3s;
+  -webkit-animation-duration: 3s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes fadeArrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeArrow {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.riseFadeUp {
+  animation-name: riseFadeUp;
+  -webkit-animation-name: riseFadeUp;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+@keyframes riseFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes riseFadeUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+  -webkit-animation-name: fadeIn;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.slideRight {
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  visibility: visible !important;
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-40%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(-150%);
+    opacity: 0;
+  }
+  20% {
+    -webkit-transform: translateX(-40%);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.miniPulse {
+  animation-name: miniPulse;
+  -webkit-animation-name: miniPulse;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+@keyframes miniPulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+@-webkit-keyframes miniPulse {
+  0% {
+    -webkit-transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0.95);
   }
 }
