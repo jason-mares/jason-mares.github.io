@@ -757,6 +757,10 @@ body.index #form-function {
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url(images/hepburn.png);
+  background-position: 180px 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 body.index #form-function img {
   display: block;
@@ -793,8 +797,8 @@ body.index #form-function .see-work {
   width: 100%;
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
+  animation-duration: 0.75s;
+  -webkit-animation-duration: 0.75s;
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
@@ -824,6 +828,8 @@ body.index #form-function .see-work #work {
   z-index: 3;
   position: relative;
   background-color: #f2f2f2;
+  padding-right: 10px;
+  box-sizing: border-box;
 }
 body.index #form-function .see-work .pointers {
   width: 90%;
@@ -895,12 +901,6 @@ body.index #form-function .see-work .circle {
   width: 100px;
   z-index: 4;
   border-radius: 50%;
-  animation-name: miniPulse;
-  -webkit-animation-name: miniPulse;
-  animation-duration: 1.5s;
-  -webkit-animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
 }
 body.index #form-function .white-box {
   background-color: #fafafa;
@@ -911,6 +911,7 @@ body.index #form-function .white-box {
   z-index: 0;
   transform: rotate(45deg);
   left: -250px;
+  border: 1px solid #fdcdcd;
   animation-duration: 0.15s;
   -webkit-animation-duration: 0.15s;
   animation-timing-function: ease;
@@ -1469,20 +1470,19 @@ body.iframe-template img {
 .slideRight {
   animation-name: slideRight;
   -webkit-animation-name: slideRight;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
+  animation-duration: 0.75s;
+  -webkit-animation-duration: 0.75s;
   animation-timing-function: ease-out;
   -webkit-animation-timing-function: ease-out;
   visibility: visible !important;
 }
 @keyframes slideRight {
   0% {
-    transform: translateX(-150%);
+    transform: translateX(250%);
     opacity: 0;
   }
-  20% {
-    transform: translateX(-40%);
-    opacity: 1;
+  75% {
+    transform: translateX(-10%);
   }
   100% {
     transform: translateX(0%);
@@ -1491,12 +1491,11 @@ body.iframe-template img {
 }
 @-webkit-keyframes slideRight {
   0% {
-    -webkit-transform: translateX(-150%);
+    -webkit-transform: translateX(250%);
     opacity: 0;
   }
-  20% {
-    -webkit-transform: translateX(-40%);
-    opacity: 1;
+  75% {
+    -webkit-transform: translateX(-10%);
   }
   100% {
     -webkit-transform: translateX(0%);

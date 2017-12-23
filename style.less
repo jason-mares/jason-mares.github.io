@@ -328,6 +328,11 @@ body.index{
         text-align:center;
         position: relative;
         overflow: hidden;
+        background-image: url(images/hepburn.png);
+        background-repeat: no-repeat;
+        background-position: 180px 0px;
+        background-repeat: no-repeat;
+        background-size: contain;
         img{
             display: block;
             margin: 0 auto;
@@ -377,6 +382,8 @@ body.index{
                 z-index: 3;
                 position: relative;
                 background-color: @offwhite;
+                padding-right: 10px;
+                box-sizing: border-box;
             }
             .pointers{
                 width: 90%;
@@ -393,13 +400,11 @@ body.index{
                 });
             }
             .pointer{
-
                 border: solid @red;
                 border-width: 0 3px 3px 0;
                 display: inline-block;
                 padding: 3px;
                 text-align: right;
-                
                 transform: rotate(-45deg);
                 -webkit-transform: rotate(-45deg);
                 &.one{ animation-delay: 0.25s !important; }
@@ -423,7 +428,6 @@ body.index{
                 width: 100px;
                 z-index: 4;
                 border-radius: 50%;
-                .miniPulse;
             }
         }
         .white-box{
@@ -435,6 +439,7 @@ body.index{
             z-index: 0;
             transform: rotate(45deg);
             left: -250px;
+            border: 1px solid lighten(@red, 25%);
             .fadeIn;
         }
         .blue-box{
@@ -1043,8 +1048,8 @@ body.iframe-template{
 	animation-name: slideRight;
 	-webkit-animation-name: slideRight;	
 
-	animation-duration: 1s;	
-	-webkit-animation-duration: 1s;
+	animation-duration: 0.75s;	
+	-webkit-animation-duration: 0.75s;
 
 	animation-timing-function: ease-out;	
 	-webkit-animation-timing-function: ease-out;		
@@ -1054,12 +1059,11 @@ body.iframe-template{
 
 @keyframes slideRight {
 	0% {
-		transform: translateX(-150%);
+		transform: translateX(250%);
         opacity: 0;
 	}
-	20% {
-		transform: translateX(-40%);
-        opacity: 1;
+	75% {
+		transform: translateX(-10%);
 	}
 	100% {
 		transform: translateX(0%);
@@ -1069,12 +1073,11 @@ body.iframe-template{
 
 @-webkit-keyframes slideRight {
 	0% {
-		-webkit-transform: translateX(-150%);
+		-webkit-transform: translateX(250%);
         opacity: 0;
-	}	
-	20% {
-		-webkit-transform: translateX(-40%);
-        opacity: 1;
+	}
+	75% {
+		-webkit-transform: translateX(-10%);
 	}
 	100% {
 		-webkit-transform: translateX(0%);
