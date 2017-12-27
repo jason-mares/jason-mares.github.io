@@ -757,10 +757,6 @@ body.index #form-function {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-image: url(images/hepburn.png);
-  background-position: 180px 0px;
-  background-repeat: no-repeat;
-  background-size: contain;
 }
 body.index #form-function img {
   display: block;
