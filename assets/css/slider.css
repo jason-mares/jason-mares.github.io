@@ -47,6 +47,15 @@
 .slider-container [id^="slide"]:nth-child(5) {
   left: 4em;
 }
+.slider-container [id^="slide"]:nth-child(6) {
+  left: 5em;
+}
+.slider-container [id^="slide"]:nth-child(7) {
+  left: 6em;
+}
+.slider-container [id^="slide"]:nth-child(8) {
+  left: 7em;
+}
 .slider-container [id^="slide"]:before {
   visibility: visible;
   content: '';

@@ -356,6 +356,9 @@ body.index{
             padding-top: 2em;
             position: relative;
             width: 100%;
+            .responsiveMin(@mobile, {
+                display: none;
+            });
             .slideRight;
             .seeworkcontainer{
                 width:100%;
@@ -439,7 +442,6 @@ body.index{
             z-index: 0;
             transform: rotate(45deg);
             left: -250px;
-            border: 1px solid lighten(@red, 25%);
             .fadeIn;
         }
         .blue-box{
