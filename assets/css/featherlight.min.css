@@ -41,7 +41,7 @@
   -webkit-animation: featherlightLoader 1s infinite linear;
           animation: featherlightLoader 1s infinite linear;
   background: transparent;
-  border: 8px solid #8f8f8f;
+  border: 8px solid #F85452;
   border-left-color: #fff;
   border-radius: 80px;
   max-width: 80px !important;
