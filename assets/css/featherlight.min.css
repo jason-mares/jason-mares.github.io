@@ -44,8 +44,12 @@
   border: 8px solid #8f8f8f;
   border-left-color: #fff;
   border-radius: 80px;
-  width: 80px;
-  height: 80px;
+  max-width: 80px !important;
+  max-height: 80px !important;
+  min-width: 80px !important;
+  min-height: 80px !important;
+  width: 80px !important;
+  height: 80px !important;
   min-width: 0;
 }
 
