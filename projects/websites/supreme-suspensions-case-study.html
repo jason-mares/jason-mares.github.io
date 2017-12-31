@@ -10,9 +10,25 @@
     <link rel="stylesheet" href="../../assets/css/featherlight.min.css">
     
     <script src="../../assets/js/jquery.js"></script>
-    <script src="../../assets/js/featherlight.min.js"></script>
+    <script src="../../assets/js/responsiveslides.min.js"></script>
     
 
+    <script>
+      $(function() {
+        $("#slider2").responsiveSlides({
+            nav: true,
+            auto: false,
+            pager: true,
+            namespace: "transparent-btns"
+        });
+        $("#slider3").responsiveSlides({
+            nav: true,
+            auto: false,
+            pager: true,
+            namespace: "transparent-btns"
+        });
+      });
+    </script>
 </head>
 <body class="project-template" id="top">
     
@@ -65,17 +81,23 @@
         <div class="container solution main-content">
             <h3>Solution:</h3>
             <p>Using a 3-part <a href="https://www.youtube.com/embed/j9WFfp1iBaw" data-featherlight="iframe" >collaborative process known as CORE</a> we discovered the brand's attributes, defined our users and set actionable goals. We set out to design solutions for two consistent problems:</p>
-            <div class="circle-container">
+            <div class="circle-container clearfix">
+                <p>1. Reduce Confusion with Unified Brand Look</p>
+                <p>2. Optimize Website for Conversions</p>
+                
+<!--
                 <span class="circle">Reduce Confusion with Unified Brand Look</span>
                 <span class="circle">Optimize Website for Conversions</span>
+-->
             </div>
         </div>
         <div class="container main-content">
                
                 
                 <section class="step">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="../../images/1.1.gif" alt="">
                     
-                    <div class="slider-container">
+                    <div class="slider-container" style="display: none;">
                         <!-- SLIDE 1 -->
                         <input id="slide-dot-1" type="radio" name="slides" checked style="display: none;">
                         <div class="slide slide-1">
@@ -90,7 +112,19 @@
 
                 <section class="step">
                     
-                    <div class="slider-container">
+                    
+                    
+                    <ul class="rslides" id="slider2">
+                        <li><img src="../../images/2.1_final.jpg" alt=""></li>
+                        <li><img src="../../images/2.2_final.jpg" alt=""></li>
+                        <li><img src="../../images/2.3_final.jpg" alt=""></li>
+                        <li><img src="../../images/2.4_final.jpg" alt=""></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    <div class="slider-container" style="display: none;">
                         <!-- SLIDE 1 -->
                         <input id="slide-dot-1" type="radio" name="slides2" checked>
                         <div class="slide slide-1">
@@ -123,7 +157,18 @@
 
                 <section class="step">
                     
-                    <div class="slider-container">
+                    
+                    
+                    <ul class="rslides" id="slider3">
+                        <li><img src="../../images/3.1_final.png" alt=""></li>
+                        <li><img src="../../images/3.2_final.png" alt=""></li>
+                        <li><img src="../../images/3.3_final.png" alt=""></li>
+                    </ul>
+                    
+                    
+                    
+                    
+                    <div class="slider-container" style="display: none;">
                         <!-- SLIDE 1 -->
                         <input id="slide-dot-1" type="radio" name="slides3" checked>
                         <div class="slide slide-1">
@@ -147,30 +192,8 @@
                 </section>
 
                 <section class="step">
-                    
-                    <div class="container animated">
-                        <img src="../../images/animated/Search.gif" alt="">
-                        <img src="../../images/animated/Home.gif" alt="">
-                        <img src="../../images/animated/Product.gif" alt="">
-                    </div>
-                    <div class="slider-container" style="display: none;">
-                        <!-- SLIDE 1 -->
-                        <input id="slide-dot-1" type="radio" name="slides4" checked>
-                        <div class="slide slide-1">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="../../images/slide1.jpg" alt="">
-                        </div>
-
-                        <!-- SLIDE 2 -->
-                        <input id="slide-dot-2" type="radio" name="slides4">
-                        <div class="slide slide-2">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="../../images/slide2.jpg" alt="">
-                        </div>
-
-                        <!-- SLIDE 3 -->
-                        <input id="slide-dot-3" type="radio" name="slides4">
-                        <div class="slide slide-3">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="../../images/slide3.jpg" alt="">
-                        </div>
+                    <div class="videoWrapper">
+                        <iframe src="https://drive.google.com/file/d/1KRxuSrJ-dx8Ck6omB2dTnd9HH9RLdcMX/preview" width="1200" height="675"></iframe>
                     </div>
                     <h3>Animated Prototypes</h3>
                     <p>To help explain to the client and inform development how the website is supposed to function.</p>

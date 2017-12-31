@@ -494,6 +494,120 @@ pulse
     opacity: 0.7;
   }
 }
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+.rslides li img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+.transparent-btns_nav {
+  z-index: 3;
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  top: 0;
+  left: 0;
+  display: block;
+  background: #fff;
+  /* Fix for IE6-9 */
+  opacity: 0;
+  filter: alpha(opacity=1);
+  width: 48%;
+  text-indent: -9999px;
+  overflow: hidden;
+  height: 91%;
+}
+.transparent-btns_nav.next {
+  left: auto;
+  right: 0;
+}
+.large-btns_nav {
+  z-index: 3;
+  position: absolute;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  opacity: 0.6;
+  text-indent: -9999px;
+  overflow: hidden;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #000000 url("themes.gif") no-repeat left 50%;
+  width: 38px;
+}
+.large-btns_nav:active {
+  opacity: 1.0;
+}
+.large-btns_nav.next {
+  left: auto;
+  background-position: right 50%;
+  right: 0;
+}
+.centered-btns_nav:focus,
+.transparent-btns_nav:focus,
+.large-btns_nav:focus {
+  outline: none;
+}
+.centered-btns_tabs,
+.transparent-btns_tabs,
+.large-btns_tabs {
+  margin-top: 10px;
+  text-align: center;
+}
+.centered-btns_tabs li,
+.transparent-btns_tabs li,
+.large-btns_tabs li {
+  display: inline;
+  float: none;
+  _float: left;
+  *float: left;
+  margin-right: 5px;
+}
+.centered-btns_tabs a,
+.transparent-btns_tabs a,
+.large-btns_tabs a {
+  text-indent: -9999px;
+  overflow: hidden;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  background: #ccc;
+  background: rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  _display: block;
+  *display: block;
+  -webkit-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.3);
+  width: 9px;
+  height: 9px;
+}
+.centered-btns_here a,
+.transparent-btns_here a,
+.large-btns_here a {
+  background: #222;
+  background: rgba(0, 0, 0, 0.8);
+}
 body,
 html {
   padding: 0px;
@@ -690,6 +804,20 @@ a:hover {
 }
 #hero img {
   width: 100%;
+}
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0px solid transparent;
 }
 footer {
   font-size: 0.5em;
@@ -1213,18 +1341,19 @@ body.project-template .hero .one-half {
   }
 }
 body.project-template .solution .circle-container {
-  display: table;
   margin: 0 auto;
 }
 body.project-template .solution .circle-container .circle {
+  display: inline-block;
+  width: 25%;
+  height: 0;
+  padding: 12.5% 0;
   border-radius: 50%;
   background-color: #f85452;
   color: #fafafa;
-  height: 300px;
-  width: 300px;
-  display: table-cell;
-  vertical-align: middle;
   text-align: center;
+  float: left;
+  margin-right: 22px;
 }
 @media (max-width: 768px) {
   body.project-template .solution .circle-container .circle {
@@ -1239,7 +1368,6 @@ body.project-template .main-content section:before {
   font-size: 4em;
   font-family: 'IBM Plex Bold';
   position: absolute;
-  top: 7.39em;
   left: 0px;
   z-index: 999999999;
 }
@@ -1297,7 +1425,7 @@ body.iframe-template p {
 @media (max-width: 768px) {
   body.iframe-template img,
   body.iframe-template p {
-    width: 100%;
+    width: 90%;
   }
 }
 @media all {
