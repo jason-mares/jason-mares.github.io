@@ -622,7 +622,7 @@ html {
 @media (max-width: 768px) {
   body,
   html {
-    font-size: 17px;
+    font-size: 12px;
   }
 }
 body img,
@@ -655,14 +655,21 @@ html img {
   text-align: center;
   margin: 0px 0 0.4em 0;
 }
+@media (max-width: 768px) {
+  .highlight {
+    text-align: left;
+    padding-left: 22px;
+    box-sizing: border-box;
+  }
+}
 .highlight:before {
   content: '';
   position: absolute;
-  bottom: 0.055em;
+  bottom: 0.057em;
   left: 0px;
   width: 0.17em;
   background-color: #292f83;
-  height: 0.545em;
+  height: 0.55em;
 }
 .highlight:after {
   content: '';
@@ -674,6 +681,12 @@ html img {
   width: 1em;
   background-repeat: no-repeat;
   background-position: bottom right;
+  background-size: contain;
+}
+@media (max-width: 768px) {
+  .highlight:after {
+    display: none;
+  }
 }
 h1,
 h2,
@@ -843,6 +856,11 @@ a:hover {
 #wrapper {
   padding-bottom: 98px;
 }
+@media (max-width: 768px) {
+  #wrapper {
+    padding-bottom: 94px;
+  }
+}
 .container {
   width: 1399px;
   padding: 22px;
@@ -855,17 +873,43 @@ a:hover {
     padding: 0px;
   }
 }
+.hero-container {
+  max-width: 1920px;
+  margin: 0 auto;
+  position: relative;
+}
 .hero-container .hero1 {
   position: absolute !important;
   top: 0;
   left: 0;
   max-width: 451px !important;
-  max-height: 293px !important;
+  width: 19.25%;
+}
+@media (max-width: 768px) {
+  .hero-container .hero1 {
+    display: none !important;
+  }
+}
+.hero-container .hero2 {
+  width: 57.92%;
+}
+@media (max-width: 768px) {
+  .hero-container .hero2 {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .hero-container .hero3 {
+  width: 28.61%;
   position: absolute !important;
   top: 0px;
   right: 0px;
+  max-width: 537px;
+}
+@media (max-width: 768px) {
+  .hero-container .hero3 {
+    display: none !important;
+  }
 }
 #hero {
   max-height: 293px !important;
@@ -878,7 +922,6 @@ a:hover {
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
-  /* 16:9 */
   height: 0;
 }
 .videoWrapper iframe {
@@ -1046,8 +1089,8 @@ body.index #form-function .see-work .seeworkcontainer {
 body.index #form-function .see-work a {
   position: absolute;
   text-decoration: none;
-  padding-top: 22px;
-  padding-left: 51px;
+  padding-top: 31px;
+  padding-left: 70px;
   left: -22px;
   width: 100%;
   text-align: left;
@@ -1064,14 +1107,14 @@ body.index #form-function .see-work #work {
   border-bottom: 4px solid #f85452;
   z-index: 3;
   position: relative;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
   padding-right: 10px;
   box-sizing: border-box;
 }
 body.index #form-function .see-work .pointers {
   width: 90%;
   position: absolute;
-  top: 20px;
+  top: 30px;
   right: 0px;
   text-align: right;
   box-sizing: border-box;
@@ -1200,9 +1243,16 @@ body.index section {
   margin: 230px 0px;
   padding-top: 22px;
 }
+body.index section#logos img {
+  border: 1px solid #e7e8f7;
+}
+@media (max-width: 768px) {
+  body.index section .highlight {
+    font-size: 4em;
+  }
+}
 @media (max-width: 768px) {
   body.index section {
-    padding: 22px;
     box-sizing: border-box;
     margin: 0px;
   }
@@ -1210,15 +1260,21 @@ body.index section {
 body.index section ul {
   width: 100%;
 }
+@media (max-width: 768px) {
+  body.index section ul {
+    padding: 0 22px !important;
+    box-sizing: border-box;
+  }
+}
 body.index section ul li {
   margin-bottom: 5px;
   box-sizing: border-box;
-  border-left: 5px solid #f2f2f2;
+  border: 11px solid transparent;
 }
 @media (max-width: 768px) {
   body.index section ul li {
-    margin-bottom: 22px;
     border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
   }
 }
 body.index section ul li.header h2 {
@@ -1263,6 +1319,13 @@ body.index section ul:after {
   clear: both;
   display: table;
 }
+.case-study-container {
+  padding: 11px !important;
+  box-sizing: border-box;
+}
+.case-study-container li {
+  border: 0px solid transparent !important;
+}
 .case-study {
   box-sizing: border-box;
   background-color: #c0c3eb;
@@ -1301,6 +1364,13 @@ body.index section ul:after {
   padding: 4em;
   display: block;
 }
+@media (max-width: 768px) {
+  .case-study a {
+    padding: 4em 2em;
+    display: block;
+    text-align: center;
+  }
+}
 .case-study a div {
   max-width: 650px;
   width: 100%;
@@ -1320,10 +1390,10 @@ body.index section ul:after {
 .case-study .btn {
   border: 3px solid #fafafa;
   background-color: transparent;
+  text-align: center;
 }
 .case-study .btn:hover {
-  border-color: #f85452;
-  color: #f85452;
+  background-color: #f85452;
   transform: scale(1);
 }
 .case-study .small {
@@ -1362,6 +1432,12 @@ mark span {
   color: #fafafa;
   margin: 0 auto;
 }
+@media (max-width: 768px) {
+  #about p {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 #about h2 {
   font-family: 'IBM Plex Sans';
   color: rgba(41, 47, 131, 0.75);
@@ -1384,6 +1460,12 @@ mark span {
   max-width: 546.484375px;
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 768px) {
+  #contact form {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 @media (max-width: 1399px) {
   #contact {

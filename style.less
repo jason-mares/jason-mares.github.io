@@ -16,7 +16,7 @@ body, html{
     font-family: @regular;
     color: @blue;
     .responsiveMax(@mobile, {
-        font-size: 17px;
+        font-size: 12px;
     });
     img{
         max-width: 100%;
@@ -81,14 +81,19 @@ body, html{
     line-height: 100%;
     text-align: center;
     margin: 0px 0 0.4em 0;
+    .responsiveMax(@mobile, {
+        text-align: left;
+        padding-left: @gutter;
+        box-sizing: border-box;
+    });
     &:before{
         content: '';
         position: absolute;
-        bottom: 0.055em;
+        bottom: 0.057em;
         left: 0px;
         width: 0.17em;
         background-color: @blue;
-        height: 0.545em;
+        height: 0.55em;
     }
     &:after{
         content: '';
@@ -100,6 +105,10 @@ body, html{
         width: 1em;
         background-repeat: no-repeat;
         background-position: bottom right;
+        background-size: contain;
+        .responsiveMax(@mobile, {
+            display: none;
+        });
     }
 }
 h1, h2, h3, h5, h6{
@@ -171,7 +180,7 @@ a{
 @red: #F85452;
 @blue: #292F83;
 @white: darken(#FFFFFF, 2%);
-@offwhite: darken(#FFFFFF, 5%);
+@offwhite: #FFFFFF;
 @black: #111111;
 @gutter: 22px;
 
@@ -300,6 +309,9 @@ a{
 //}
 #wrapper{
     padding-bottom: @headerHeight;
+    .responsiveMax(@mobile, {
+        padding-bottom: @headerHeightMobile;
+    });
 }
 .container{
     width: @container;
@@ -312,17 +324,36 @@ a{
     });
 }
 .hero-container{
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
     .hero1{
         position: absolute !important;
         top: 0;
         left: 0;
         max-width: 451px !important;
-        max-height: 293px !important;
+//        max-height: 293px !important;
+        width: 19.25%;
+        .responsiveMax(@mobile, {
+            display: none !important;
+        });
+    }
+    .hero2{
+        width: 57.92%;
+        .responsiveMax(@mobile, {
+            width: 90%;
+            margin: 0 auto;
+        });
     }
     .hero3{
+        width: 28.61%;
         position: absolute !important;
         top: 0px;
         right: 0px;
+        max-width: 537px;
+        .responsiveMax(@mobile, {
+            display: none !important;
+        });
     }
 }
 #hero{
@@ -335,8 +366,7 @@ a{
 }
 .videoWrapper {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-//	padding-top: 25px;
+	padding-bottom: 56.25%;
 	height: 0;
     iframe {
         position: absolute;
@@ -496,8 +526,8 @@ body.index{
             a{
                 position: absolute;
                 text-decoration: none;
-                padding-top: @gutter;
-                padding-left: 51px;
+                padding-top: 31px;
+                padding-left: 70px;
                 left: -@gutter;
                 width: 100%;
                 text-align: left;
@@ -521,7 +551,7 @@ body.index{
             .pointers{
                 width: 90%;
                 position: absolute;
-                top: 20px;
+                top: 30px;
                 right: 0px;
                 text-align: right;
                 box-sizing: border-box;
@@ -600,26 +630,35 @@ body.index{
     section{
         margin: 230px 0px;
         padding-top: @gutter;
+        &#logos{
+            img{
+                border: 1px solid lighten(@blue, 60%);
+            }
+        }
+        .highlight{
+            .responsiveMax(@mobile, {
+                font-size: 4em;
+            });
+        }
         .responsiveMax(@mobile, {
-            padding: @gutter;
+//            padding: @gutter;
             box-sizing: border-box;
             margin: 0px;
-//            &:nth-child(odd){
-//                background-color: @blue;
-//            }
-//            &:nth-child(even){
-//                background-color: @red;
-//            }
         });
         ul{
             width: 100%;
+            
+            .responsiveMax(@mobile, {
+                padding: 0 22px !important;
+                box-sizing: border-box;
+            });
             li{
                 margin-bottom: 5px;
                 box-sizing: border-box;
-                border-left: 5px solid @offwhite;
+                border: @gutter/2 solid transparent;
                 .responsiveMax(@mobile, {
-                    margin-bottom: @gutter;
                     border-left: 0px solid transparent;
+                    border-right: 0px solid transparent;
                 });
                 &.header{
                     h2{
@@ -630,8 +669,6 @@ body.index{
                         margin: 0px;
                         text-align: center;
                         .responsiveMax(@mobile, {
-//                            color: @white;
-//                            border-bottom: 5px solid @white;
                             padding: 0.33em 0px;
                         });
                     }
@@ -674,6 +711,13 @@ body.index{
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////// CASE STUDY
+.case-study-container{
+    padding: @gutter/2 !important;
+    box-sizing: border-box;
+    li{
+        border: 0px solid transparent !important;
+    }
+}
 .case-study{
     box-sizing: border-box;
     background-color: lighten(@blue, 50%);
@@ -710,6 +754,11 @@ body.index{
         text-decoration: none;
         padding: 4em;
         display: block;
+        .responsiveMax(@mobile, {
+            padding: 4em 2em;
+            display: block;
+            text-align: center;
+        });
         div{
             max-width: 650px;
             width: 100%;
@@ -730,9 +779,9 @@ body.index{
     .btn{
         border: 3px solid @white;
         background-color: transparent;
+        text-align: center;
         &:hover{
-            border-color: @red;
-            color: @red;
+            background-color: @red;
             transform: scale(1);
         }
     }
@@ -771,6 +820,10 @@ mark{
         max-width: @container/1.6;
         color: @white;
         margin: 0 auto;
+        .responsiveMax(@mobile, {
+            width: 90%;
+            margin: 0 auto;
+        });
     }
     h2{
         font-family: @regular;
@@ -793,6 +846,10 @@ mark{
         max-width: @container/1.6/1.6;
         margin-left: auto;
         margin-right: auto;
+        .responsiveMax(@mobile, {
+            width: 90%;
+            margin: 0 auto;
+        });
     }
     .responsiveMax(@container, {
         width: 100%;
