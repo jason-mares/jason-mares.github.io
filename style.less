@@ -68,8 +68,8 @@ body, html{
     font-family: 'IBM Plex Sans Light';
 //    src: url('assets/fonts/ibmplexsans-regular-webfont.woff2') format('woff2'),
 //         url('assets/fonts/ibmplexsans-regular-webfont.woff') format('woff');
-    src: url('assets/ibmplexsans-light-webfont.woff2') format('woff2'),
-         url('assets/ibmplexsans-light-webfont.woff') format('woff');
+    src: url('assets/fonts/ibmplexsans-light-webfont.woff2') format('woff2'),
+         url('assets/fonts/ibmplexsans-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -90,7 +90,7 @@ body, html{
     &:before{
         content: '';
         position: absolute;
-        bottom: 0.057em;
+        bottom: 0.11em;
         left: 0px;
         width: 0.17em;
         background-color: @blue;
@@ -119,6 +119,7 @@ body, html{
 h1, h2, h3, h5, h6{
     font-family: @regular;
     color: @red;
+    line-height: 100%;
 }
 h1  ,
 .h1 {
@@ -158,11 +159,24 @@ a{
         color: @red;
     }
 }
-.skills{
-    opacity: 0.5;
-}
 b{
     font-family: @bold;
+}
+blockquote{
+    font-size: 2.6em;
+    font-family: @italic;
+    border-left: @gutter solid @red;
+    padding-left: @gutter*2;
+    span{
+        font-size: 0.5em;
+        display: block;
+        opacity: 0.55;
+        margin-top: 2em;
+    }
+}
+
+.skills{
+    opacity: 0.5;
 }
 
 .btn{
@@ -299,6 +313,7 @@ b{
     background-color: @blue;
     background-image: url(images/white-dotted-bg.png);
     background-repeat: repeat;
+    color: @white;
 }
 .red-container{
     background-color: @red;
@@ -387,6 +402,11 @@ b{
         height: 100%;
         border: 0px solid transparent;
     }
+}
+.one-half{
+    .responsiveMax(@mobile, {
+        width: 100%;
+    });
 }
 
 
@@ -916,7 +936,7 @@ mark{
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////// CASE STUDY PAGE
+///////////////////////////////////////////////////////////////////////////// CASE STUDY PAGE JOURNAL
 /////////////////////////////////////////////////////////////////////////////////////////////
 body.project-template{
 //    *{border: 1px solid red; box-sizing: border-box}
@@ -995,6 +1015,132 @@ body.project-template{
             }
         }
     }
+    /////////////////// STRUCTURE
+    #wrapper{
+        margin-top: 19em;
+        .highlight{
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        section{
+            margin-bottom: 13em;
+            width: 100%;
+            position: relative;
+        }
+    }
+    .media-wrapper{
+        position: relative;
+        max-width: 1148px;
+        width: 100%;
+        margin: 0 auto;
+        .responsiveMax(@mobile, {
+            width: 90%;
+            margin: 0 auto;
+        });
+    }
+    .inner-wrapper{
+        max-width: 699px;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .ui-showcase{
+        .one-half{
+            &:nth-child(1){
+                .responsiveMax(@mobile, {
+                    min-height: 590px;
+                });
+            }
+        }
+        img{
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: 2em auto 0;
+            animation-name: fadeLoop;
+            -webkit-animation-name: fadeLoop;
+            animation-duration: 9s;
+            -webkit-animation-duration: 9s;
+            animation-iteration-count: infinite;
+            width: 406px;
+            .responsiveMax(@mobile, {
+                margin: 5em auto;
+                height: 100%;
+                width: auto;
+            });
+            &:nth-child(1){
+                position: absolute;
+                z-index: 1;
+                opacity: 0;
+            }
+            &:nth-child(2){
+                position: absolute;
+                z-index: 2;
+                animation-delay: 3s;
+                opacity: 0;
+            }
+            &:nth-child(3){
+                position: absolute;
+                z-index: 3;
+                animation-delay: 6s;
+                opacity: 0;
+            }
+        }
+        blockquote{
+            margin: 5.5em 0;
+            .responsiveMax(@mobile, {
+                margin: 2em 0;
+            });
+        }
+    }
+    .highlight{
+        .responsiveMax(@mobile, {
+            font-size: 4.2em;
+            text-align: left !important;
+        });
+    }
+    
+    #mobile-first{
+        min-height: 1290px;
+        overflow: hidden;
+        h2{
+            position: relative;
+            z-index: 2;
+            padding: 0 @gutter;
+            box-sizing: border-box;
+        }
+        img{
+            transition: 0.5s all;
+        }
+        img#tire{
+            position: absolute;
+            top: 7.5em;
+            right: 0;
+            z-index: 1;
+            .responsiveMax(@mobile;{
+                transform: rotate(-30deg);
+                right: -34%;
+            });
+        }
+        img#product-page{
+            position: absolute;
+            top: 36em;
+            left: -6.2em;
+            z-index: 1;
+            .responsiveMax(@mobile;{
+                transform: rotate(15deg);
+                left: -9%;
+            });
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     .solution{
         .circle-container{
             margin: 0 auto;
@@ -1450,4 +1596,45 @@ body.iframe-template{
 	100% {
 		-webkit-transform: scale(0.95);
 	}			
+}
+    
+    
+.fadeLoop {
+    animation-name: fadeLoop;
+    -webkit-animation-name: fadeLoop;
+    animation-timing-function: ease-out;
+}
+@keyframes fadeLoop {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeLoop {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
 }
