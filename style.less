@@ -86,6 +86,7 @@ body, html{
         text-align: left;
         padding-left: @gutter;
         box-sizing: border-box;
+        margin: 1em 0 0.5em 0;
     });
     &:before{
         content: '';
@@ -114,6 +115,9 @@ body, html{
     span{
         display: block;
         padding: 0px 0px 0px @gutter*2;
+        .responsiveMax(@mobile, {
+            padding: 0px;
+        });
     }
 }
 h1, h2, h3, h5, h6{
@@ -155,6 +159,7 @@ a{
     -webkit-text-decoration-skip: ink;
     text-decoration-skip: ink;
     transition: 0.5s all;
+    font-family: @bold;
     &:hover{
         color: @red;
     }
@@ -865,6 +870,9 @@ mark{
             display: none;
         }
     }
+    .responsiveMax(@mobile, {
+        margin-top: 6em;
+    });
 }
 ////////////////////////////////////////////////////////////////////////////////////// CONTACT
 #contact{
@@ -889,9 +897,6 @@ mark{
     h2{
         font-size: 2.6em;
         color: @white;
-        .responsiveMax(420px, {
-            word-break: break-all;
-        });
     }
     input, textarea, button{
         width: 100%;
@@ -941,6 +946,22 @@ mark{
 /////////////////////////////////////////////////////////////////////////////////////////////
 body.project-template{
 //    *{border: 1px solid red; box-sizing: border-box}
+    p{
+        .responsiveMax(@mobile, {
+            width: 90%;
+            margin: auto;
+        });
+    }
+    h2{
+        font-size: 4.8em;
+        .responsiveMax(@mobile, {
+            padding: @gutter;
+            box-sizing: border-box;
+        });
+    }
+    
+    
+    ///////////////////////////////////////////// HERO
     .hero{
         .blue-container;
         color: @white;
@@ -1016,7 +1037,9 @@ body.project-template{
             }
         }
     }
-    /////////////////// STRUCTURE
+    
+    
+    ///////////////////////////////////////////// STRUCTURE
     #wrapper{
         margin-top: 19em;
         .highlight{
@@ -1045,6 +1068,9 @@ body.project-template{
         margin: 0 auto;
         text-align: center;
     }
+    
+    
+    ///////////////////////////////////////////// UI SHOWCASE
     .ui-showcase{
         .one-half{
             &:nth-child(1){
@@ -1102,6 +1128,8 @@ body.project-template{
         });
     }
     
+    
+    ///////////////////////////////////////////// MOBILE FIRST
     #mobile-first{
         min-height: 1290px;
         overflow: hidden;
@@ -1136,6 +1164,61 @@ body.project-template{
                 transform: rotate(15deg);
                 left: -9%;
             });
+        }
+        .responsiveMax(1036px, {
+            min-height: 73em;
+        });
+        .responsiveMax(@mobile, {
+            min-height: 93em;
+        });
+        .responsiveMax(520px, {
+            min-height: 83em;
+        });
+        .responsiveMax(380px, {
+            min-height: 68em;
+        });
+    }
+    
+    
+    ///////////////////////////////////////////// MOBILE FIRST
+    #navigation-showcase{
+        *zoom: 1;
+        &:before,
+        &:after {
+            content: " "; /* 1 */
+            display: table; /* 2 */
+        }
+
+        &:after {
+            clear: both;
+        }
+        .one-half{
+            padding: 0px;
+            &:nth-child(1){
+                margin-left: 50%;
+                text-align: right;
+                .responsiveMax(@mobile, {
+                    margin-left: auto;
+                });
+            }
+            &:nth-child(2){
+                margin-left: -100%;
+                padding-left: 5%;
+                position: -webkit-sticky;
+                position: sticky;
+                top: 0;
+                h2{
+                    margin: 4em 0em 2em;
+                }
+                .responsiveMax(@mobile, {
+                    margin-left: auto;
+                    h2{
+                        text-align: center;
+                        margin: 0px;
+                        padding: 0px;
+                    }
+                });
+            }
         }
     }
     
