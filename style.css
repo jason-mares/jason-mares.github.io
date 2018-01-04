@@ -968,7 +968,6 @@ footer {
 }
 header {
   position: fixed;
-  bottom: 0px;
   padding: 22px 0px 15px;
   z-index: 999999999999999999;
   transition: 2s all;
@@ -982,10 +981,16 @@ header {
     box-sizing: border-box;
   }
 }
-@media only screen and (max-width: 768px) {
+@media (min-width: 768px) {
+  header {
+    bottom: -31px !important;
+  }
+}
+@media (max-width: 768px) {
   header {
     position: fixed;
     width: 100%;
+    bottom: 0px;
   }
 }
 header nav {

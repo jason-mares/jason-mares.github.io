@@ -426,7 +426,6 @@ footer{
 /////////////////////////////////////////////////////////////////////////////////////////////
 header{
     position: fixed;
-    bottom: 0px;
     padding: @gutter 0px 15px;
     z-index: 999999999999999999;
     transition: 2s all;
@@ -437,9 +436,13 @@ header{
         padding: @gutter @gutter @gutter/2 @gutter;
         box-sizing: border-box;
     });
-    .responsive(@mobile, {
+    .responsiveMin(@mobile, {
+        bottom: -31px !important;
+    });
+    .responsiveMax(@mobile, {
         position: fixed;
         width: 100%;
+        bottom: 0px;
     });
     nav{
         width: @nav;
