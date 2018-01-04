@@ -984,8 +984,6 @@ header {
 }
 @media only screen and (max-width: 768px) {
   header {
-    top: auto !important;
-    bottom: 0px !important;
     position: fixed;
     width: 100%;
   }
@@ -1752,7 +1750,12 @@ body.project-template #mobile-first img#tire {
   right: 0;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1258px) {
+  body.project-template #mobile-first img#tire {
+    right: -24%;
+  }
+}
+@media (max-width: 1036px) {
   body.project-template #mobile-first img#tire {
     transform: rotate(-30deg);
     right: -34%;
@@ -1764,7 +1767,7 @@ body.project-template #mobile-first img#product-page {
   left: -6.2em;
   z-index: 1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1036px) {
   body.project-template #mobile-first img#product-page {
     transform: rotate(15deg);
     left: -9%;
@@ -1840,6 +1843,20 @@ body.project-template .main-content p {
 }
 body.project-template .animated img {
   width: 33%;
+}
+.header {
+  -webkit-transition-duration: .5s;
+  transition-duration: .5s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: transform;
+  height: 94px;
+}
+.header--hidden {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 @media (max-width: 768px) {
   .slider-container {

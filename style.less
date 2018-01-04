@@ -438,8 +438,6 @@ header{
         box-sizing: border-box;
     });
     .responsive(@mobile, {
-        top: auto !important;
-        bottom: 0px !important;
         position: fixed;
         width: 100%;
     });
@@ -1118,7 +1116,10 @@ body.project-template{
             top: 7.5em;
             right: 0;
             z-index: 1;
-            .responsiveMax(@mobile;{
+            .responsiveMax(1258px, {
+                right: -24%;
+            });
+            .responsiveMax(1036px, {
                 transform: rotate(-30deg);
                 right: -34%;
             });
@@ -1128,7 +1129,7 @@ body.project-template{
             top: 36em;
             left: -6.2em;
             z-index: 1;
-            .responsiveMax(@mobile;{
+            .responsiveMax(1036px, {
                 transform: rotate(15deg);
                 left: -9%;
             });
@@ -1201,6 +1202,26 @@ body.project-template{
             
         }
     }
+}
+.header
+{
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+ 
+    -webkit-transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+    transition-timing-function: cubic-bezier( 0.215, 0.610, 0.355, 1.000 );
+ 
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    
+    height: @headerHeightMobile;
+}
+ 
+.header--hidden
+{
+    -webkit-transform: translateY( -100% );
+    -ms-transform: translateY( -100% );
+    transform: translateY( -100% );
 }
 /////////////////////////////////////////////////////////////////////////////// Responsive Slider
 
