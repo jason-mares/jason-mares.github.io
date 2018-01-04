@@ -92,7 +92,7 @@ m(e)});if(d)return b(c,d-1)},f=document.querySelectorAll("a.scroll"),g=f.length-
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
 			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'bottom' ) ) + wScrollDiff;
 
-			if( wScrollCurrent <= 0 ) // scrolled to the very top; element sticks to the top
+			if( wScrollCurrent <= 0 ) // scrolled to the very top; element sticks to the bottom
 				element.style.bottom = '0px';
 
 			else if( wScrollDiff > 0 ) // scrolled up; element slides in
@@ -100,7 +100,7 @@ m(e)});if(d)return b(c,d-1)},f=document.querySelectorAll("a.scroll"),g=f.length-
 
 			else if( wScrollDiff < 0 ) // scrolled down
 			{
-				if( wScrollCurrent + wHeight >= dHeight - elHeight )  // scrolled to the very bottom; element slides in
+				if( wScrollCurrent + wHeight >= dHeight - elHeight )  // scrolled to the very top; element slides in
 					element.style.bottom = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
 
 				else // scrolled down; element slides out
