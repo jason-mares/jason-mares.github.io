@@ -881,6 +881,9 @@ blockquote span {
   background-repeat: repeat;
   color: #fafafa;
 }
+.blue-container a {
+  color: #fafafa;
+}
 .red-container {
   background-color: #f85452;
   background-image: url(images/white-dotted-bg.png);
@@ -1411,6 +1414,7 @@ body.index section ul:after {
   text-decoration: none;
   padding: 4em;
   display: block;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 768px) {
   .case-study a {
@@ -1423,6 +1427,9 @@ body.index section ul:after {
   max-width: 650px;
   width: 100%;
   transition: 0.5s all;
+}
+.case-study a div * {
+  font-family: 'IBM Plex Sans Light';
 }
 .case-study a div h3 {
   color: #fafafa;
@@ -1474,6 +1481,9 @@ mark span {
   background-color: #292f83;
   background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
+  color: #fafafa;
+}
+#about a {
   color: #fafafa;
 }
 #about p {
@@ -1597,6 +1607,9 @@ body.project-template .hero {
   background-color: #292f83;
   background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
+  color: #fafafa;
+}
+body.project-template .hero a {
   color: #fafafa;
 }
 body.project-template .hero #case-study-hero {

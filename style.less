@@ -322,6 +322,9 @@ blockquote{
     background-image: url(images/white-dotted-bg.png);
     background-repeat: repeat;
     color: @white;
+    a{
+        color: @white;
+    }
 }
 .red-container{
     background-color: @red;
@@ -801,6 +804,7 @@ body.index{
         text-decoration: none;
         padding: 4em;
         display: block;
+        background-color: rgba(0,0,0,0.5);
         .responsiveMax(@mobile, {
             padding: 4em 2em;
             display: block;
@@ -810,6 +814,9 @@ body.index{
             max-width: 650px;
             width: 100%;
             transition: 0.5s all;
+            *{
+                font-family: @regular;
+            }
             h3{
                 color: @white;
                 line-height: 100%;
