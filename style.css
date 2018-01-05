@@ -1340,7 +1340,7 @@ body.index section ul li.header h2 {
 }
 body.index section ul li img {
   transition: 0.5s all;
-  background-color: #c0c3eb;
+  background-color: #fafafa;
   display: block;
   min-height: 2em;
   width: 100%;
@@ -1601,7 +1601,7 @@ body.project-template .hero {
 }
 body.project-template .hero #case-study-hero {
   position: absolute;
-  top: -3em;
+  top: -3.7em;
   left: -3.65em;
   max-width: 1023px;
   width: 100%;
@@ -1664,10 +1664,18 @@ body.project-template .hero .one-half .title:before {
   bottom: 0.7em;
   left: -35px;
 }
+@media (max-width: 442px) {
+  body.project-template .hero .one-half .title:before {
+    height: 12.79em;
+  }
+}
 @media (max-width: 910px) {
   body.project-template .hero .one-half .title {
     margin-left: 36px !important;
   }
+}
+body.project-template .hero .one-half .title h2 {
+  padding-left: 0 !important;
 }
 body.project-template .hero .one-half:nth-child(2) {
   padding: 4.85em 0;
@@ -1705,6 +1713,11 @@ body.project-template .media-wrapper {
     width: 90%;
     margin: 0 auto;
   }
+}
+body.project-template .media-wrapper img {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 body.project-template .inner-wrapper {
   max-width: 699px;
@@ -1874,6 +1887,10 @@ body.project-template #navigation-showcase .one-half:nth-child(2) h2 {
     margin: 0px;
     padding: 0px;
   }
+}
+body.project-template #desktop img {
+  display: block;
+  width: 100%;
 }
 body.project-template .solution .circle-container {
   margin: 0 auto;
