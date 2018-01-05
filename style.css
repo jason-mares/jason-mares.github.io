@@ -665,7 +665,7 @@ html img {
 .highlight:before {
   content: '';
   position: absolute;
-  bottom: 0.11em;
+  bottom: 0.057em;
   left: 0px;
   width: 0.17em;
   background-color: #292f83;
@@ -682,6 +682,7 @@ html img {
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .highlight:after {
@@ -691,6 +692,8 @@ html img {
 .highlight span {
   display: block;
   padding: 0px 0px 0px 44px;
+  z-index: 2;
+  position: relative;
 }
 @media (max-width: 768px) {
   .highlight span {
@@ -938,7 +941,9 @@ blockquote span {
 }
 @media (max-width: 768px) {
   .hero-container .hero3 {
-    display: none !important;
+    display: block !important;
+    top: 20px;
+    width: 50%;
   }
 }
 #hero {
@@ -1284,9 +1289,14 @@ body.index section {
 body.index section#logos img {
   border: 1px solid #e7e8f7;
 }
+@media (max-width: 1025px) {
+  body.index section .highlight.h1 {
+    font-size: 7em;
+  }
+}
 @media (max-width: 768px) {
   body.index section .highlight {
-    font-size: 4em;
+    font-size: 4em !important;
   }
 }
 @media (max-width: 768px) {

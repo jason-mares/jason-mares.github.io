@@ -91,7 +91,7 @@ body, html{
     &:before{
         content: '';
         position: absolute;
-        bottom: 0.11em;
+        bottom: 0.057em;
         left: 0px;
         width: 0.17em;
         background-color: @blue;
@@ -108,6 +108,7 @@ body, html{
         background-repeat: no-repeat;
         background-position: bottom right;
         background-size: contain;
+        z-index: 1;
         .responsiveMax(@mobile, {
             display: none;
         });
@@ -115,6 +116,8 @@ body, html{
     span{
         display: block;
         padding: 0px 0px 0px @gutter*2;
+        z-index: 2;
+        position: relative;
         .responsiveMax(@mobile, {
             padding: 0px;
         });
@@ -383,7 +386,9 @@ blockquote{
         right: 0px;
         max-width: 537px;
         .responsiveMax(@mobile, {
-            display: none !important;
+            display: block !important;
+            top: 20px;
+            width: 50%;
         });
     }
 }
@@ -673,8 +678,13 @@ body.index{
             }
         }
         .highlight{
+            .responsiveMax(1025px, {
+                &.h1{
+                    font-size: 7em;
+                }
+            });
             .responsiveMax(@mobile, {
-                font-size: 4em;
+                font-size: 4em !important;
             });
         }
         .responsiveMax(@mobile, {
