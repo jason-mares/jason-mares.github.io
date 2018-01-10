@@ -10,7 +10,7 @@ body, html{
     padding: 0px;
     margin: 0px;
     background-color: @white;
-    background-image: url("images/dotted-bg.png");
+//    background-image: url("images/dotted-bg.png");
     background-repeat: repeat;
     font-size: 18px;
     font-family: @regular;
@@ -96,22 +96,22 @@ body, html{
         background-color: @blue;
         height: 0.55em;
     }
-    &:after{
-        content: '';
-        position: absolute;
-        bottom: 0.055em;
-        right: 0px;
-        background-image: url(images/cropmarks.png);
-        height: 1em;
-        width: 1em;
-        background-repeat: no-repeat;
-        background-position: bottom right;
-        background-size: contain;
-        z-index: 1;
-        .responsiveMax(@mobile, {
-            display: none;
-        });
-    }
+//    &:after{
+//        content: '';
+//        position: absolute;
+//        bottom: 0.055em;
+//        right: 0px;
+//        background-image: url(images/cropmarks.png);
+//        height: 1em;
+//        width: 1em;
+//        background-repeat: no-repeat;
+//        background-position: bottom right;
+//        background-size: contain;
+//        z-index: 1;
+//        .responsiveMax(@mobile, {
+//            display: none;
+//        });
+//    }
     span{
         display: block;
         padding: 0px 0px 0px @gutter*2;
@@ -121,6 +121,13 @@ body, html{
             padding: 0px;
         });
     }
+}
+.small{
+    font-size: 0.75em;
+    .responsiveMax(@mobile, {
+        font-size: 1em;
+        opacity: 0.5;
+    });
 }
 h1, h2, h3, h5, h6{
     font-family: @regular;
@@ -318,7 +325,7 @@ blockquote{
 }
 .blue-container{
     background-color: @blue;
-    background-image: url(images/white-dotted-bg.png);
+//    background-image: url(images/white-dotted-bg.png);
     background-repeat: repeat;
     color: @white;
     a{
@@ -327,7 +334,7 @@ blockquote{
 }
 .red-container{
     background-color: @red;
-    background-image: url(images/white-dotted-bg.png);
+//    background-image: url(images/white-dotted-bg.png);
     background-repeat: repeat;
 }
 
@@ -343,12 +350,6 @@ blockquote{
 //        padding-bottom: @headerHeightMobile;
 //    });
 //}
-#wrapper{
-    padding-bottom: @headerHeight;
-    .responsiveMax(@mobile, {
-        padding-bottom: @headerHeightMobile;
-    });
-}
 .container{
     width: @container;
     padding: @gutter;
@@ -359,6 +360,31 @@ blockquote{
         padding: 0px;
     });
 }
+.intro-container{
+    padding-top: @headerHeight;
+    padding: @headerHeight @gutter @gutter @gutter !important;
+    h1, h2{
+        margin: 0;
+    }
+    h1{
+        font-size: 2.5em;
+    }
+    h2{
+        font-size: 1em;
+        margin-top: 0.5em;
+        color: @blue;
+    }
+    p{
+        margin-top: 2em;
+    }
+    div{
+        .responsiveMax(@mobile, {
+            width: 100%;
+        });
+    }
+}
+
+
 .hero-container{
     max-width: 1920px;
     margin: 0 auto;
@@ -438,23 +464,22 @@ footer{
 /////////////////////////////////////////////////////////////////////////////////////////////
 header{
     position: fixed;
-    padding: @gutter 0px 15px;
+    top: 0px;
+    padding: @gutter;
     z-index: 999999999999999999;
     transition: 2s all;
     background-color: @white;
     width: 100%;
-    border-top: 2px solid @red;
     .responsiveMax(@container, {
         padding: @gutter @gutter @gutter/2 @gutter;
         box-sizing: border-box;
     });
-    .responsiveMin(@mobile, {
-        bottom: -31px !important;
-    });
     .responsiveMax(@mobile, {
         position: fixed;
         width: 100%;
-        bottom: 0px;
+    });
+    .responsiveMin(@mobile, {
+        top: 0px !important;
     });
     nav{
         width: @nav;
@@ -482,7 +507,7 @@ header{
                 display: inline-block;
                 a{
                     text-decoration: none;
-                    font-family: @bold;
+                    font-family: @regular;
                     color: @red;
                     transition: 0.5s color;
                     padding: 0.75em ;
@@ -538,6 +563,7 @@ body.index{
         text-align:center;
         position: relative;
         overflow: hidden;
+        display: none !important;
         img{
             display: block;
             margin: 0 auto;
@@ -672,14 +698,19 @@ body.index{
         margin: 0px;
     }
     section{
-        margin: 230px 0px;
-        padding-top: @gutter;
+        padding-top: 150px;
+        .responsiveMax(@mobile, {
+            &:first-child{
+                padding-top: 0px;
+            }
+        });
         &#logos{
             img{
                 border: 1px solid lighten(@blue, 60%);
             }
         }
         .highlight{
+            font-size: 2em;
             .responsiveMax(1025px, {
                 &.h1{
                     font-size: 7em;
@@ -869,10 +900,12 @@ mark{
     margin: 0 auto;
     padding: 9em 0em;
     .blue-container;
-    p{
+    .container{
         max-width: @container/1.6;
+    }
+    p{
         color: @white;
-        margin: 0 auto;
+        margin-bottom: @gutter;
         .responsiveMax(@mobile, {
             width: 90%;
             margin: 0 auto;
@@ -885,6 +918,10 @@ mark{
         &:after{
             display: none;
         }
+    }
+    ul{
+        width: 50%;
+        margin-bottom: @gutter;
     }
     .responsiveMax(@mobile, {
         margin-top: 6em;
@@ -962,6 +999,7 @@ mark{
 /////////////////////////////////////////////////////////////////////////////////////////////
 body.project-template{
 //    *{border: 1px solid red; box-sizing: border-box}
+    padding-top: @headerHeight;
     p{
         .responsiveMax(@mobile, {
             width: 90%;
@@ -1335,7 +1373,6 @@ body.project-template{
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
     
-    height: @headerHeightMobile;
 }
  
 .header--hidden

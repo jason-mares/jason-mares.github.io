@@ -613,7 +613,6 @@ html {
   padding: 0px;
   margin: 0px;
   background-color: #fafafa;
-  background-image: url("images/dotted-bg.png");
   background-repeat: repeat;
   font-size: 18px;
   font-family: 'IBM Plex Sans Light', sans-serif;
@@ -671,24 +670,6 @@ html img {
   background-color: #292f83;
   height: 0.55em;
 }
-.highlight:after {
-  content: '';
-  position: absolute;
-  bottom: 0.055em;
-  right: 0px;
-  background-image: url(images/cropmarks.png);
-  height: 1em;
-  width: 1em;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
-  z-index: 1;
-}
-@media (max-width: 768px) {
-  .highlight:after {
-    display: none;
-  }
-}
 .highlight span {
   display: block;
   padding: 0px 0px 0px 44px;
@@ -698,6 +679,15 @@ html img {
 @media (max-width: 768px) {
   .highlight span {
     padding: 0px;
+  }
+}
+.small {
+  font-size: 0.75em;
+}
+@media (max-width: 768px) {
+  .small {
+    font-size: 1em;
+    opacity: 0.5;
   }
 }
 h1,
@@ -877,7 +867,6 @@ blockquote span {
 }
 .blue-container {
   background-color: #292f83;
-  background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
   color: #fafafa;
 }
@@ -886,16 +875,7 @@ blockquote span {
 }
 .red-container {
   background-color: #f85452;
-  background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
-}
-#wrapper {
-  padding-bottom: 98px;
-}
-@media (max-width: 768px) {
-  #wrapper {
-    padding-bottom: 94px;
-  }
 }
 .container {
   width: 1399px;
@@ -907,6 +887,30 @@ blockquote span {
   .container {
     width: 100%;
     padding: 0px;
+  }
+}
+.intro-container {
+  padding-top: 98px;
+  padding: 98px 22px 22px 22px !important;
+}
+.intro-container h1,
+.intro-container h2 {
+  margin: 0;
+}
+.intro-container h1 {
+  font-size: 2.5em;
+}
+.intro-container h2 {
+  font-size: 1em;
+  margin-top: 0.5em;
+  color: #292f83;
+}
+.intro-container p {
+  margin-top: 2em;
+}
+@media (max-width: 768px) {
+  .intro-container div {
+    width: 100%;
   }
 }
 .hero-container {
@@ -983,12 +987,12 @@ footer {
 }
 header {
   position: fixed;
-  padding: 22px 0px 15px;
+  top: 0px;
+  padding: 22px;
   z-index: 999999999999999999;
   transition: 2s all;
   background-color: #fafafa;
   width: 100%;
-  border-top: 2px solid #f85452;
 }
 @media (max-width: 1399px) {
   header {
@@ -996,16 +1000,15 @@ header {
     box-sizing: border-box;
   }
 }
-@media (min-width: 768px) {
-  header {
-    bottom: -31px !important;
-  }
-}
 @media (max-width: 768px) {
   header {
     position: fixed;
     width: 100%;
-    bottom: 0px;
+  }
+}
+@media (min-width: 768px) {
+  header {
+    top: 0px !important;
   }
 }
 header nav {
@@ -1034,7 +1037,7 @@ header nav ul li {
 }
 header nav ul li a {
   text-decoration: none;
-  font-family: 'IBM Plex Sans Bold', sans-serif;
+  font-family: 'IBM Plex Sans Light', sans-serif;
   color: #f85452;
   transition: 0.5s color;
   padding: 0.75em ;
@@ -1083,6 +1086,7 @@ body.index #form-function {
   text-align: center;
   position: relative;
   overflow: hidden;
+  display: none !important;
 }
 body.index #form-function img {
   display: block;
@@ -1286,11 +1290,18 @@ body.index ul {
   margin: 0px;
 }
 body.index section {
-  margin: 230px 0px;
-  padding-top: 22px;
+  padding-top: 150px;
+}
+@media (max-width: 768px) {
+  body.index section:first-child {
+    padding-top: 0px;
+  }
 }
 body.index section#logos img {
   border: 1px solid #e7e8f7;
+}
+body.index section .highlight {
+  font-size: 2em;
 }
 @media (max-width: 1025px) {
   body.index section .highlight.h1 {
@@ -1479,17 +1490,18 @@ mark span {
   margin: 0 auto;
   padding: 9em 0em;
   background-color: #292f83;
-  background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
   color: #fafafa;
 }
 #about a {
   color: #fafafa;
 }
-#about p {
+#about .container {
   max-width: 874.375px;
+}
+#about p {
   color: #fafafa;
-  margin: 0 auto;
+  margin-bottom: 22px;
 }
 @media (max-width: 768px) {
   #about p {
@@ -1505,6 +1517,10 @@ mark span {
 #about h2:after {
   display: none;
 }
+#about ul {
+  width: 50%;
+  margin-bottom: 22px;
+}
 @media (max-width: 768px) {
   #about {
     margin-top: 6em;
@@ -1517,7 +1533,6 @@ mark span {
   box-sizing: border-box;
   margin-top: 22px;
   background-color: #f85452;
-  background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
 }
 #contact form {
@@ -1588,6 +1603,9 @@ mark span {
   transform: scale(0.9);
   background-color: #db0b09;
 }
+body.project-template {
+  padding-top: 98px;
+}
 @media (max-width: 768px) {
   body.project-template p {
     width: 90%;
@@ -1605,7 +1623,6 @@ body.project-template h2 {
 }
 body.project-template .hero {
   background-color: #292f83;
-  background-image: url(images/white-dotted-bg.png);
   background-repeat: repeat;
   color: #fafafa;
 }
@@ -1983,7 +2000,6 @@ body.project-template .animated img {
   transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition-property: -webkit-transform;
   transition-property: transform;
-  height: 94px;
 }
 .header--hidden {
   -webkit-transform: translateY(-100%);

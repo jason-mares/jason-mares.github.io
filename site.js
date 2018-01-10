@@ -139,25 +139,31 @@ m(e)});if(d)return b(c,d-1)},f=document.querySelectorAll("a.scroll"),g=f.length-
 			wHeight			= window.innerHeight;
 			wScrollCurrent	= window.pageYOffset;
 			wScrollDiff		= wScrollBefore - wScrollCurrent;
-			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'bottom' ) ) + wScrollDiff;
+			elTop			= parseInt( window.getComputedStyle( element ).getPropertyValue( 'top' ) ) + wScrollDiff;
 
 			if( wScrollCurrent <= 0 ) // scrolled to the very top; element sticks to the bottom
-				element.style.bottom = '0px';
+				element.style.top = '0px';
 
 			else if( wScrollDiff > 0 ) // scrolled up; element slides in
-				element.style.bottom = ( elTop > 0 ? 0 : elTop ) + 'px';
+				element.style.top = ( elTop > 0 ? 0 : elTop ) + 'px';
 
 			else if( wScrollDiff < 0 ) // scrolled down
 			{
 				if( wScrollCurrent + wHeight >= dHeight - elHeight )  // scrolled to the very top; element slides in
-					element.style.bottom = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
+					element.style.top = ( ( elTop = wScrollCurrent + wHeight - dHeight ) < 0 ? elTop : 0 ) + 'px';
 
 				else // scrolled down; element slides out
-					element.style.bottom = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
+					element.style.top = ( Math.abs( elTop ) > elHeight ? -elHeight : elTop ) + 'px';
 			}
 
 			wScrollBefore = wScrollCurrent;
 		});
 
 	}( document, window, 0 ));
+
+
+//Grab our current Url
+	var url = window.location.toString();
+	//Remove anchor from url using the split
+	url = url.split('#')[0];
 
