@@ -661,15 +661,6 @@ html img {
     margin: 1em 0 0.5em 0;
   }
 }
-.highlight:before {
-  content: '';
-  position: absolute;
-  bottom: 0.057em;
-  left: 0px;
-  width: 0.17em;
-  background-color: #292f83;
-  height: 0.55em;
-}
 .highlight span {
   display: block;
   padding: 0px 0px 0px 44px;
@@ -793,6 +784,9 @@ blockquote span {
 ::-moz-selection {
   background-color: #c0c3eb;
   color: #fafafa;
+}
+.clearfix {
+  padding: 0;
 }
 .clearfix:after {
   content: "";
@@ -975,7 +969,15 @@ blockquote span {
   border: 0px solid transparent;
 }
 @media (max-width: 768px) {
-  .one-half {
+  .one-half,
+  .one-third,
+  .two-third,
+  .one-quarter,
+  .three-quarter,
+  .one-fifth,
+  .two-fifth,
+  .three-fifth,
+  .four-fifth {
     width: 100%;
   }
 }
@@ -1468,6 +1470,7 @@ body.index section ul:after {
 .case-study.supreme-web {
   background-image: url(images/supreme-hero.jpg);
   color: #fafafa;
+  padding: 0;
 }
 .case-study.supreme-web:after {
   content: "";
