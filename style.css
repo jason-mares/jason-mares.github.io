@@ -871,6 +871,41 @@ blockquote span {
   background-color: #f85452;
   background-repeat: repeat;
 }
+#name-logo {
+  transform: scale(0.8);
+  transform-origin: 0 0;
+  display: table-cell;
+}
+@media (max-width: 410px) {
+  #name-logo {
+    transform: scale(0.7);
+  }
+}
+#name-logo a {
+  text-decoration: none;
+}
+#name-logo h1,
+#name-logo h2 {
+  margin: 0;
+}
+#name-logo h1 {
+  font-size: 2.5em;
+}
+@media (max-width: 410px) {
+  #name-logo h1 {
+    color: #292f83;
+  }
+}
+#name-logo h2 {
+  font-size: 1em;
+  margin-top: 0.5em;
+  color: #292f83;
+}
+@media (max-width: 410px) {
+  #name-logo h2 {
+    display: none;
+  }
+}
 .container {
   width: 1399px;
   padding: 22px;
@@ -886,18 +921,6 @@ blockquote span {
 .intro-container {
   padding-top: 98px;
   padding: 98px 22px 22px 22px !important;
-}
-.intro-container h1,
-.intro-container h2 {
-  margin: 0;
-}
-.intro-container h1 {
-  font-size: 2.5em;
-}
-.intro-container h2 {
-  font-size: 1em;
-  margin-top: 0.5em;
-  color: #292f83;
 }
 .intro-container p {
   margin-top: 2em;
@@ -1033,6 +1056,7 @@ header nav ul {
   text-align: right;
   display: table-cell;
   vertical-align: middle;
+  white-space: nowrap;
 }
 header nav ul li {
   display: inline-block;
@@ -1064,13 +1088,6 @@ header nav ul li a:hover {
   header nav ul li a {
     padding: 22px 0px 0px 22px;
     font-size: 1.3em;
-  }
-}
-@media only screen and (max-width: 850px) {
-  header nav ul li:nth-child(1),
-  header nav ul li:nth-child(2),
-  header nav ul li:nth-child(3) {
-    display: none;
   }
 }
 header nav ul:after {
@@ -1292,7 +1309,7 @@ body.index ul {
   margin: 0px;
 }
 body.index section {
-  padding-top: 150px;
+  padding-top: 75px;
 }
 @media (max-width: 768px) {
   body.index section:first-child {
@@ -1304,16 +1321,6 @@ body.index section#logos img {
 }
 body.index section .highlight {
   font-size: 2em;
-}
-@media (max-width: 1025px) {
-  body.index section .highlight.h1 {
-    font-size: 7em;
-  }
-}
-@media (max-width: 768px) {
-  body.index section .highlight {
-    font-size: 4em !important;
-  }
 }
 @media (max-width: 768px) {
   body.index section {

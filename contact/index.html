@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Jason Mares | Graphic Designer & Front End Developer</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="theme-color" content="#F85452">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicons/manifest.json">
+    <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#f85452">
+    <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+    <meta name="msapplication-config" content="/images/favicons/browserconfig.xml">
+    <link rel="stylesheet" href="/style.css">
+    
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/featherlight.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $("img").unveil(200);
+        });
+    </script>
+</head>
+<body>
+
+    <header id="site-nav" class="header">
+        <nav>
+            <div id="name-logo">
+              <a href="/">
+                  <h1 id="name">jason <b>mares</b></h1>
+                  <h2><b>graphic designer & developer</b></h2>
+              </a>
+            </div>
+            <ul>
+                <li><a href="/">work</a></li>
+                <li><a href="/about/">about</a></li>
+                <li><a href="/contact/">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+            
+            
+            
+<!--     CONTACT      -->
+            <section id="contact">
+                <form method="POST" action="http://formspree.io/jason.t.mares@gmail.com">
+                    <input type="text" name="name" placeholder="name">
+                    <input type="email" name="email" placeholder="email address">
+                    <textarea name="message" placeholder="message"></textarea>
+                    <button class="btn" type="submit">send message</button>
+                </form>
+            </section>
+
+</body>
+</html>
