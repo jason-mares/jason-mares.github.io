@@ -663,7 +663,7 @@ html img {
 }
 .highlight span {
   display: block;
-  padding: 0px 0px 0px 44px;
+  padding: 0px 0px 0px 32px;
   z-index: 2;
   position: relative;
 }
@@ -924,7 +924,7 @@ blockquote span {
   padding: 98px 22px 22px 22px !important;
 }
 .intro-container p {
-  margin-top: 2em;
+  margin-top: 5em;
 }
 @media (max-width: 768px) {
   .intro-container div {
@@ -1310,7 +1310,7 @@ body.index ul {
   margin: 0px;
 }
 body.index section {
-  padding-top: 75px;
+  padding: 15px;
 }
 @media (max-width: 768px) {
   body.index section:first-child {
