@@ -549,11 +549,11 @@ pulse
   opacity: 0.6;
   text-indent: -9999px;
   overflow: hidden;
-  top: 0;
+  height: 40px;
   bottom: 0;
   left: 0;
-  background: #000000 url("/images/themes.gif") no-repeat left 50%;
-  width: 38px;
+  background: #292f83 url("/images/themes.gif") no-repeat left 50%;
+  width: 40px;
 }
 .large-btns_nav:active {
   opacity: 1.0;
@@ -900,6 +900,7 @@ blockquote span {
   font-size: 1em;
   margin-top: 0.5em;
   color: #292f83;
+  padding: 0px;
 }
 @media (max-width: 410px) {
   #name-logo h2 {
@@ -1498,19 +1499,12 @@ mark span {
 #about {
   width: 100%;
   margin: 0 auto;
-  padding: 9em 0em;
-  background-color: #292f83;
-  background-repeat: repeat;
-  color: #fafafa;
-}
-#about a {
-  color: #fafafa;
+  padding: 9em 0em 1em;
 }
 #about .container {
   max-width: 874.375px;
 }
 #about p {
-  color: #fafafa;
   margin-bottom: 22px;
 }
 @media (max-width: 768px) {
@@ -1539,11 +1533,9 @@ mark span {
 #contact {
   width: 100%;
   margin-bottom: 0em;
-  padding: 3em 0em;
+  padding: 9em 0em 1em;
   box-sizing: border-box;
   margin-top: 22px;
-  background-color: #f85452;
-  background-repeat: repeat;
 }
 #contact form {
   max-width: 546.484375px;
@@ -1563,7 +1555,6 @@ mark span {
 }
 #contact h2 {
   font-size: 2.6em;
-  color: #fafafa;
 }
 #contact input,
 #contact textarea,
